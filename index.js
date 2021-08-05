@@ -1,25 +1,9 @@
-const mymap = L.map('mapid').setView([51.6, 6.2], 8)
-const generalToken = 'pk.eyJ1IjoicmF6cHVkZGluZyIsImEiOiJja3JmNHlubnk1ZDEyMnJueHIwZmxheWJvIn0.YrzTKf5_oT6x2C8GJku_fQ'
-const accessToken = generalToken
+const myMap = L.map('mapid').setView([51.6, 6.2], 8)
 
-const mapStyles = {
-	blueprint: 'razpudding/ckrj3u9zj7xzb18q92ferf415',
-	standard: 'mapbox/streets-v11',
-	outdoors: 'mapbox/outdoors-v11',
-	light: 'mapbox/light-v10',
-	dark: 'mapbox/dark-v10', 
-}
-
-const tileSource =  mapStyles.dark
-
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: tileSource,
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: accessToken
-}).addTo(mymap)
+const Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+	maxZoom: 18,
+	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+}).addTo(myMap)
 
 markStreets()
 async function markStreets(){
@@ -41,6 +25,5 @@ async function markStreets(){
 		marker.bindPopup(title)
 		markers.addLayer(marker)
 	})
-
-	mymap.addLayer(markers)
+	myMap.addLayer(markers)
 }
