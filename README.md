@@ -8,3 +8,7 @@ Data was created in a separate project where I cross referenced a list of endang
 ## Map tiles
 - Looks like there's a good chance I'll go over the mapbox limit. [Here's an OS alt](https://openmaptiles.org/docs/website/leaflet/)
 - A better option is [leaflet's own tile provider](http://leaflet-extras.github.io/leaflet-providers/preview/index.html)
+
+## Resources
+- [How to set up a serverless API on Vercel that interfaces with MongoDB](https://github.com/vercel/next.js/tree/canary/examples/with-mongodb-mongoose)
+- [Mongodb docs on same topic](https://docs.atlas.mongodb.com/best-practices-connecting-from-vercel/)
