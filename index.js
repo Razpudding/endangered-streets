@@ -7,7 +7,7 @@ const Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles
 
 markStreets()
 async function markStreets(){
-	const res = await fetch('./jsonData_true_0.json')
+	const res = await fetch('./jsonData_true_1.json')
 	const streets = await res.json()
 	console.log(streets[0], streets.length)
 	console.log(streets.filter(street => street.note != null))
@@ -19,7 +19,7 @@ async function markStreets(){
 		const title = `
 			<p>${street.streetName}</p>
 			<a href="https://www.google.com/maps/search/${street.latLng[0]},${street.latLng[1]}"
-				target="_blank"> ${street.latLng[0]} ,${street.latLng[1]}
+				target="_blank">Open in Google Maps
 			</a>`
 		const marker = L.marker([street.latLng[0],street.latLng[1]])
 		marker.bindPopup(title)
