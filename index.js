@@ -7,7 +7,7 @@ const Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles
 
 markStreets()
 async function markStreets(){
-	const res = await fetch('./jsonData_true_0.json')
+	const res = await fetch('./jsonData_true_1.json')
 	const streets = await res.json()
 	console.log(streets[0], streets.length)
 	console.log(streets.filter(street => street.note != null))
