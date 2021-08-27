@@ -1,4 +1,4 @@
-const myMap = L.map('mapid').setView([51.6, 6.2], 8)
+const myMap = L.map('mapid', {tap: false}).setView([51.6, 6.2], 8)
 
 const Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
 	maxZoom: 18,
